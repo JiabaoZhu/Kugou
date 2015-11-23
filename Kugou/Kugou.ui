@@ -631,9 +631,6 @@ QPushButton:pressed {
                  <height>49</height>
                 </size>
                </property>
-               <property name="focusPolicy">
-                <enum>Qt::NoFocus</enum>
-               </property>
                <property name="styleSheet">
                 <string notr="true">QPushButton {
 	border:none;
@@ -696,6 +693,9 @@ QPushButton:checked:pressed {
                <property name="checkable">
                 <bool>true</bool>
                </property>
+               <property name="default">
+                <bool>true</bool>
+               </property>
               </widget>
               <widget class="QPushButton" name="btn_next">
                <property name="geometry">
@@ -717,9 +717,6 @@ QPushButton:checked:pressed {
                  <width>49</width>
                  <height>49</height>
                 </size>
-               </property>
-               <property name="focusPolicy">
-                <enum>Qt::NoFocus</enum>
                </property>
                <property name="styleSheet">
                 <string notr="true">QPushButton {
@@ -846,90 +843,81 @@ QPushButton:checked:pressed {
              <height>115</height>
             </size>
            </property>
-           <layout class="QVBoxLayout" name="verticalLayout_2">
-            <property name="spacing">
-             <number>0</number>
+           <widget class="QWidget" name="widget_back" native="true">
+            <property name="geometry">
+             <rect>
+              <x>0</x>
+              <y>0</y>
+              <width>636</width>
+              <height>39</height>
+             </rect>
             </property>
-            <property name="leftMargin">
-             <number>0</number>
+            <property name="minimumSize">
+             <size>
+              <width>636</width>
+              <height>39</height>
+             </size>
             </property>
-            <property name="topMargin">
-             <number>0</number>
+            <property name="maximumSize">
+             <size>
+              <width>16777215</width>
+              <height>39</height>
+             </size>
             </property>
-            <property name="rightMargin">
-             <number>0</number>
-            </property>
-            <property name="bottomMargin">
-             <number>0</number>
-            </property>
-            <item>
-             <widget class="QWidget" name="widget_back" native="true">
-              <property name="minimumSize">
-               <size>
-                <width>636</width>
-                <height>39</height>
-               </size>
-              </property>
-              <property name="maximumSize">
-               <size>
-                <width>16777215</width>
-                <height>39</height>
-               </size>
-              </property>
-              <property name="styleSheet">
-               <string notr="true">QWidget#widget_back {
+            <property name="styleSheet">
+             <string notr="true">QWidget#widget_back {
 	/*border-top-width: 1px;
 	border-right-width: 2px;
 	border-bottom-width: 1px;
 	border-left-width: 2px;
 	border-image: url(:/Main/Resources/Main/back.png) 0 40 0 20 stretch stretch;;*/
 }</string>
-              </property>
-              <layout class="QHBoxLayout" name="horizontalLayout_5">
-               <property name="spacing">
-                <number>0</number>
+            </property>
+            <layout class="QHBoxLayout" name="horizontalLayout_5">
+             <property name="spacing">
+              <number>0</number>
+             </property>
+             <property name="leftMargin">
+              <number>0</number>
+             </property>
+             <property name="topMargin">
+              <number>0</number>
+             </property>
+             <property name="rightMargin">
+              <number>0</number>
+             </property>
+             <property name="bottomMargin">
+              <number>0</number>
+             </property>
+             <item>
+              <spacer name="horizontalSpacer">
+               <property name="orientation">
+                <enum>Qt::Horizontal</enum>
                </property>
-               <property name="leftMargin">
-                <number>0</number>
+               <property name="sizeHint" stdset="0">
+                <size>
+                 <width>124</width>
+                 <height>20</height>
+                </size>
                </property>
-               <property name="topMargin">
-                <number>0</number>
+              </spacer>
+             </item>
+             <item>
+              <widget class="QLineEdit" name="lineEdit_search">
+               <property name="minimumSize">
+                <size>
+                 <width>217</width>
+                 <height>29</height>
+                </size>
                </property>
-               <property name="rightMargin">
-                <number>0</number>
+               <property name="maximumSize">
+                <size>
+                 <width>16777215</width>
+                 <height>29</height>
+                </size>
                </property>
-               <property name="bottomMargin">
-                <number>0</number>
-               </property>
-               <item>
-                <spacer name="horizontalSpacer">
-                 <property name="orientation">
-                  <enum>Qt::Horizontal</enum>
-                 </property>
-                 <property name="sizeHint" stdset="0">
-                  <size>
-                   <width>124</width>
-                   <height>20</height>
-                  </size>
-                 </property>
-                </spacer>
-               </item>
-               <item>
-                <widget class="QLineEdit" name="lineEdit_search">
-                 <property name="minimumSize">
-                  <size>
-                   <width>217</width>
-                   <height>29</height>
-                  </size>
-                 </property>
-                 <property name="maximumSize">
-                  <size>
-                   <width>16777215</width>
-                   <height>29</height>
-                  </size>
-                 </property>
-                 <property name="styleSheet">
-                  <string notr="true">QLineEdit {
+               <property name="styleSheet">
+                <string notr="true">QLineEdit {
 	border-top-width: 1px;
 	border-right-width: 1px;
 	border-bottom-width: 1px;
@@ -939,72 +927,72 @@ QPushButton:checked:pressed {
 QLineEdit:focus {
 	border-image: url(:/Main/Resources/Main/lineEdit_search_focus.png) 0 10 0 10 stretch stretch;
 }</string>
-                 </property>
-                </widget>
-               </item>
-               <item>
-                <spacer name="horizontalSpacer_2">
-                 <property name="orientation">
-                  <enum>Qt::Horizontal</enum>
-                 </property>
-                 <property name="sizeHint" stdset="0">
-                  <size>
-                   <width>124</width>
-                   <height>20</height>
-                  </size>
-                 </property>
-                </spacer>
-               </item>
-               <item>
-                <widget class="QWidget" name="widget_back_button" native="true">
-                 <property name="minimumSize">
-                  <size>
-                   <width>165</width>
-                   <height>39</height>
-                  </size>
-                 </property>
-                 <property name="maximumSize">
-                  <size>
-                   <width>165</width>
-                   <height>39</height>
-                  </size>
-                 </property>
-                 <property name="styleSheet">
-                  <string notr="true">QWidget#widget_back_button {
+               </property>
+              </widget>
+             </item>
+             <item>
+              <spacer name="horizontalSpacer_2">
+               <property name="orientation">
+                <enum>Qt::Horizontal</enum>
+               </property>
+               <property name="sizeHint" stdset="0">
+                <size>
+                 <width>124</width>
+                 <height>20</height>
+                </size>
+               </property>
+              </spacer>
+             </item>
+             <item>
+              <widget class="QWidget" name="widget_back_button" native="true">
+               <property name="minimumSize">
+                <size>
+                 <width>165</width>
+                 <height>39</height>
+                </size>
+               </property>
+               <property name="maximumSize">
+                <size>
+                 <width>165</width>
+                 <height>39</height>
+                </size>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">QWidget#widget_back_button {
 }</string>
-                 </property>
-                 <widget class="QPushButton" name="btn_right_skin">
-                  <property name="geometry">
-                   <rect>
-                    <x>0</x>
-                    <y>10</y>
-                    <width>23</width>
-                    <height>18</height>
-                   </rect>
-                  </property>
-                  <property name="minimumSize">
-                   <size>
-                    <width>23</width>
-                    <height>18</height>
-                   </size>
-                  </property>
-                  <property name="maximumSize">
-                   <size>
-                    <width>23</width>
-                    <height>18</height>
-                   </size>
-                  </property>
-                  <property name="cursor">
-                   <cursorShape>PointingHandCursor</cursorShape>
-                  </property>
-                  <property name="focusPolicy">
-                   <enum>Qt::NoFocus</enum>
-                  </property>
-                  <property name="toolTip">
-                   <string>更换皮肤</string>
-                  </property>
-                  <property name="styleSheet">
-                   <string notr="true">QPushButton {
+               </property>
+               <widget class="QPushButton" name="btn_right_skin">
+                <property name="geometry">
+                 <rect>
+                  <x>0</x>
+                  <y>10</y>
+                  <width>23</width>
+                  <height>18</height>
+                 </rect>
+                </property>
+                <property name="minimumSize">
+                 <size>
+                  <width>23</width>
+                  <height>18</height>
+                 </size>
+                </property>
+                <property name="maximumSize">
+                 <size>
+                  <width>23</width>
+                  <height>18</height>
+                 </size>
+                </property>
+                <property name="cursor">
+                 <cursorShape>PointingHandCursor</cursorShape>
+                </property>
+                <property name="focusPolicy">
+                 <enum>Qt::NoFocus</enum>
+                </property>
+                <property name="toolTip">
+                 <string>更换皮肤</string>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">QPushButton {
 	border:none;
 	background-image: url(:/Main/Resources/Main/btn_skin_normal.png);
 }
@@ -1014,69 +1002,69 @@ QPushButton:hover {
 QPushButton:pressed {
 	background-image: url(:/Main/Resources/Main/btn_skin_clicked.png);
 }</string>
-                  </property>
-                 </widget>
-                 <widget class="QLabel" name="label_separate">
-                  <property name="geometry">
-                   <rect>
-                    <x>24</x>
-                    <y>10</y>
-                    <width>18</width>
-                    <height>18</height>
-                   </rect>
-                  </property>
-                  <property name="minimumSize">
-                   <size>
-                    <width>18</width>
-                    <height>18</height>
-                   </size>
-                  </property>
-                  <property name="maximumSize">
-                   <size>
-                    <width>18</width>
-                    <height>18</height>
-                   </size>
-                  </property>
-                  <property name="styleSheet">
-                   <string notr="true">QLabel {
+                </property>
+               </widget>
+               <widget class="QLabel" name="label_separate">
+                <property name="geometry">
+                 <rect>
+                  <x>24</x>
+                  <y>10</y>
+                  <width>18</width>
+                  <height>18</height>
+                 </rect>
+                </property>
+                <property name="minimumSize">
+                 <size>
+                  <width>18</width>
+                  <height>18</height>
+                 </size>
+                </property>
+                <property name="maximumSize">
+                 <size>
+                  <width>18</width>
+                  <height>18</height>
+                 </size>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">QLabel {
 	background-position: center top;
 	background-repeat: no-repeat;
 	background-image: url(:/Main/Resources/Main/separate_line.png);
 }</string>
-                  </property>
-                 </widget>
-                 <widget class="QPushButton" name="btn_right_menu">
-                  <property name="geometry">
-                   <rect>
-                    <x>43</x>
-                    <y>10</y>
-                    <width>23</width>
-                    <height>18</height>
-                   </rect>
-                  </property>
-                  <property name="minimumSize">
-                   <size>
-                    <width>23</width>
-                    <height>18</height>
-                   </size>
-                  </property>
-                  <property name="maximumSize">
-                   <size>
-                    <width>23</width>
-                    <height>18</height>
-                   </size>
-                  </property>
-                  <property name="cursor">
-                   <cursorShape>PointingHandCursor</cursorShape>
-                  </property>
-                  <property name="focusPolicy">
-                   <enum>Qt::NoFocus</enum>
-                  </property>
-                  <property name="toolTip">
-                   <string>主菜单</string>
-                  </property>
-                  <property name="styleSheet">
-                   <string notr="true">QPushButton {
+                </property>
+               </widget>
+               <widget class="QPushButton" name="btn_right_menu">
+                <property name="geometry">
+                 <rect>
+                  <x>43</x>
+                  <y>10</y>
+                  <width>23</width>
+                  <height>18</height>
+                 </rect>
+                </property>
+                <property name="minimumSize">
+                 <size>
+                  <width>23</width>
+                  <height>18</height>
+                 </size>
+                </property>
+                <property name="maximumSize">
+                 <size>
+                  <width>23</width>
+                  <height>18</height>
+                 </size>
+                </property>
+                <property name="cursor">
+                 <cursorShape>PointingHandCursor</cursorShape>
+                </property>
+                <property name="focusPolicy">
+                 <enum>Qt::NoFocus</enum>
+                </property>
+                <property name="toolTip">
+                 <string>主菜单</string>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">QPushButton {
 	border:none;
 	background-image: url(:/Main/Resources/Main/btn_menu_normal.png);
 }
@@ -1086,40 +1074,40 @@ QPushButton:hover {
 QPushButton:pressed {
 	background-image: url(:/Main/Resources/Main/btn_menu_clicked.png);
 }</string>
-                  </property>
-                 </widget>
-                 <widget class="QPushButton" name="btn_right_remote">
-                  <property name="geometry">
-                   <rect>
-                    <x>67</x>
-                    <y>10</y>
-                    <width>23</width>
-                    <height>18</height>
-                   </rect>
-                  </property>
-                  <property name="minimumSize">
-                   <size>
-                    <width>23</width>
-                    <height>18</height>
-                   </size>
-                  </property>
-                  <property name="maximumSize">
-                   <size>
-                    <width>23</width>
-                    <height>18</height>
-                   </size>
-                  </property>
-                  <property name="cursor">
-                   <cursorShape>PointingHandCursor</cursorShape>
-                  </property>
-                  <property name="focusPolicy">
-                   <enum>Qt::NoFocus</enum>
-                  </property>
-                  <property name="toolTip">
-                   <string>开启遥控器</string>
-                  </property>
-                  <property name="styleSheet">
-                   <string notr="true">QPushButton {
+                </property>
+               </widget>
+               <widget class="QPushButton" name="btn_right_remote">
+                <property name="geometry">
+                 <rect>
+                  <x>67</x>
+                  <y>10</y>
+                  <width>23</width>
+                  <height>18</height>
+                 </rect>
+                </property>
+                <property name="minimumSize">
+                 <size>
+                  <width>23</width>
+                  <height>18</height>
+                 </size>
+                </property>
+                <property name="maximumSize">
+                 <size>
+                  <width>23</width>
+                  <height>18</height>
+                 </size>
+                </property>
+                <property name="cursor">
+                 <cursorShape>PointingHandCursor</cursorShape>
+                </property>
+                <property name="focusPolicy">
+                 <enum>Qt::NoFocus</enum>
+                </property>
+                <property name="toolTip">
+                 <string>开启遥控器</string>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">QPushButton {
 	border:none;
 	background-image: url(:/Main/Resources/Main/btn_remote_normal.png);
 }
@@ -1129,40 +1117,40 @@ QPushButton:hover {
 QPushButton:pressed {
 	background-image: url(:/Main/Resources/Main/btn_remote_clicked.png);
 }</string>
-                  </property>
-                 </widget>
-                 <widget class="QPushButton" name="btn_right_hide">
-                  <property name="geometry">
-                   <rect>
-                    <x>91</x>
-                    <y>10</y>
-                    <width>23</width>
-                    <height>18</height>
-                   </rect>
-                  </property>
-                  <property name="minimumSize">
-                   <size>
-                    <width>23</width>
-                    <height>18</height>
-                   </size>
-                  </property>
-                  <property name="maximumSize">
-                   <size>
-                    <width>23</width>
-                    <height>18</height>
-                   </size>
-                  </property>
-                  <property name="cursor">
-                   <cursorShape>PointingHandCursor</cursorShape>
-                  </property>
-                  <property name="focusPolicy">
-                   <enum>Qt::NoFocus</enum>
-                  </property>
-                  <property name="toolTip">
-                   <string>隐藏音乐库</string>
-                  </property>
-                  <property name="styleSheet">
-                   <string notr="true">QPushButton {
+                </property>
+               </widget>
+               <widget class="QPushButton" name="btn_right_hide">
+                <property name="geometry">
+                 <rect>
+                  <x>91</x>
+                  <y>10</y>
+                  <width>23</width>
+                  <height>18</height>
+                 </rect>
+                </property>
+                <property name="minimumSize">
+                 <size>
+                  <width>23</width>
+                  <height>18</height>
+                 </size>
+                </property>
+                <property name="maximumSize">
+                 <size>
+                  <width>23</width>
+                  <height>18</height>
+                 </size>
+                </property>
+                <property name="cursor">
+                 <cursorShape>PointingHandCursor</cursorShape>
+                </property>
+                <property name="focusPolicy">
+                 <enum>Qt::NoFocus</enum>
+                </property>
+                <property name="toolTip">
+                 <string>隐藏音乐库</string>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">QPushButton {
 	border:none;
 	background-image: url(:/Main/Resources/Main/btn_hide_normal.png);
 }
@@ -1172,40 +1160,40 @@ QPushButton:hover {
 QPushButton:pressed {
 	background-image: url(:/Main/Resources/Main/btn_hide_clicked.png);
 }</string>
-                  </property>
-                 </widget>
-                 <widget class="QPushButton" name="btn_right_min">
-                  <property name="geometry">
-                   <rect>
-                    <x>115</x>
-                    <y>10</y>
-                    <width>23</width>
-                    <height>18</height>
-                   </rect>
-                  </property>
-                  <property name="minimumSize">
-                   <size>
-                    <width>23</width>
-                    <height>18</height>
-                   </size>
-                  </property>
-                  <property name="maximumSize">
-                   <size>
-                    <width>23</width>
-                    <height>18</height>
-                   </size>
-                  </property>
-                  <property name="cursor">
-                   <cursorShape>PointingHandCursor</cursorShape>
-                  </property>
-                  <property name="focusPolicy">
-                   <enum>Qt::NoFocus</enum>
-                  </property>
-                  <property name="toolTip">
-                   <string>最小化</string>
-                  </property>
-                  <property name="styleSheet">
-                   <string notr="true">QPushButton {
+                </property>
+               </widget>
+               <widget class="QPushButton" name="btn_right_min">
+                <property name="geometry">
+                 <rect>
+                  <x>115</x>
+                  <y>10</y>
+                  <width>23</width>
+                  <height>18</height>
+                 </rect>
+                </property>
+                <property name="minimumSize">
+                 <size>
+                  <width>23</width>
+                  <height>18</height>
+                 </size>
+                </property>
+                <property name="maximumSize">
+                 <size>
+                  <width>23</width>
+                  <height>18</height>
+                 </size>
+                </property>
+                <property name="cursor">
+                 <cursorShape>PointingHandCursor</cursorShape>
+                </property>
+                <property name="focusPolicy">
+                 <enum>Qt::NoFocus</enum>
+                </property>
+                <property name="toolTip">
+                 <string>最小化</string>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">QPushButton {
 	border:none;
 	background-image: url(:/Main/Resources/Main/btn_min_normal.png);
 }
@@ -1215,40 +1203,40 @@ QPushButton:hover {
 QPushButton:pressed {
 	background-image: url(:/Main/Resources/Main/btn_min_clicked.png);
 }</string>
-                  </property>
-                 </widget>
-                 <widget class="QPushButton" name="btn_right_close">
-                  <property name="geometry">
-                   <rect>
-                    <x>139</x>
-                    <y>10</y>
-                    <width>23</width>
-                    <height>18</height>
-                   </rect>
-                  </property>
-                  <property name="minimumSize">
-                   <size>
-                    <width>23</width>
-                    <height>18</height>
-                   </size>
-                  </property>
-                  <property name="maximumSize">
-                   <size>
-                    <width>13</width>
-                    <height>18</height>
-                   </size>
-                  </property>
-                  <property name="cursor">
-                   <cursorShape>PointingHandCursor</cursorShape>
-                  </property>
-                  <property name="focusPolicy">
-                   <enum>Qt::NoFocus</enum>
-                  </property>
-                  <property name="toolTip">
-                   <string>关闭</string>
-                  </property>
-                  <property name="styleSheet">
-                   <string notr="true">QPushButton {
+                </property>
+               </widget>
+               <widget class="QPushButton" name="btn_right_close">
+                <property name="geometry">
+                 <rect>
+                  <x>139</x>
+                  <y>10</y>
+                  <width>23</width>
+                  <height>18</height>
+                 </rect>
+                </property>
+                <property name="minimumSize">
+                 <size>
+                  <width>23</width>
+                  <height>18</height>
+                 </size>
+                </property>
+                <property name="maximumSize">
+                 <size>
+                  <width>13</width>
+                  <height>18</height>
+                 </size>
+                </property>
+                <property name="cursor">
+                 <cursorShape>PointingHandCursor</cursorShape>
+                </property>
+                <property name="focusPolicy">
+                 <enum>Qt::NoFocus</enum>
+                </property>
+                <property name="toolTip">
+                 <string>关闭</string>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">QPushButton {
 	border:none;
 	background-image: url(:/Main/Resources/Main/btn_close_normal.png);
 }
@@ -1258,14 +1246,12 @@ QPushButton:hover {
 QPushButton:pressed {
 	background-image: url(:/Main/Resources/Main/btn_close_clicked.png);
 }</string>
-                  </property>
-                 </widget>
-                </widget>
-               </item>
-              </layout>
-             </widget>
-            </item>
-           </layout>
+                </property>
+               </widget>
+              </widget>
+             </item>
+            </layout>
+           </widget>
           </widget>
          </item>
         </layout>

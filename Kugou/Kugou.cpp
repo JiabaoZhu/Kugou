@@ -42,8 +42,6 @@ Kugou::Kugou(QWidget *parent) :
 
     initLeftTabList();
 
-    ui->stackedWidget->setWindowOpacity(0.5);
-
     {
         m_imageName = ":/Background/Resources/Background/3.jpg";
         m_image.load(m_imageName);
@@ -305,6 +303,7 @@ QRadioButton* Kugou::addRadioButton(QString styleSheet)
 {
     QRadioButton *btn = new QRadioButton(this);
     btn->setStyleSheet(styleSheet);
+    btn->setFocusPolicy(Qt::NoFocus);
     return btn;
 }
 
