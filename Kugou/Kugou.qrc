@@ -102,6 +102,8 @@
         <file>Resources/Main/btn_nicam_uncheck_clicked.png</file>
         <file>Resources/Main/btn_nicam_uncheck_hover.png</file>
         <file>Resources/Main/btn_nicam_uncheck_normal.png</file>
+        <file>Resources/Main/lineEdit_search_focus.png</file>
+        <file>Resources/Main/lineEdit_search_normal.png</file>
     </qresource>
     <qresource prefix="/Tray">
         <file>Resources/Tray/btn_next_clicked.png</file>
