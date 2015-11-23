@@ -364,8 +364,9 @@ void Kugou::showFullScreen()
     {
         m_isFullScreen = true;
         m_oldDlgRect = geometry();
-        setFixedSize(QApplication::desktop()->availableGeometry().size());
-        move(0,0);
+        QRect availableGeometry = QApplication::desktop()->availableGeometry();
+        setFixedSize(availableGeometry.size());
+        setGeometry(availableGeometry);
     }
 }
 
