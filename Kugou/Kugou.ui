@@ -518,7 +518,7 @@ QSlider::handle:horizontal:pressed {
                 <height>55</height>
                </size>
               </property>
-              <widget class="QPushButton" name="btn_lrc">
+              <widget class="QPushButton" name="btn_show_lrc">
                <property name="geometry">
                 <rect>
                  <x>0</x>
@@ -843,81 +843,226 @@ QPushButton:checked:pressed {
              <height>115</height>
             </size>
            </property>
-           <widget class="QWidget" name="widget_back" native="true">
-            <property name="geometry">
-             <rect>
-              <x>0</x>
-              <y>0</y>
-              <width>636</width>
-              <height>39</height>
-             </rect>
+           <layout class="QVBoxLayout" name="verticalLayout_2">
+            <property name="spacing">
+             <number>0</number>
             </property>
-            <property name="minimumSize">
-             <size>
-              <width>636</width>
-              <height>39</height>
-             </size>
+            <property name="leftMargin">
+             <number>0</number>
             </property>
-            <property name="maximumSize">
-             <size>
-              <width>16777215</width>
-              <height>39</height>
-             </size>
+            <property name="topMargin">
+             <number>0</number>
             </property>
-            <property name="styleSheet">
-             <string notr="true">QWidget#widget_back {
+            <property name="rightMargin">
+             <number>0</number>
+            </property>
+            <property name="bottomMargin">
+             <number>0</number>
+            </property>
+            <item>
+             <widget class="QWidget" name="widget_back" native="true">
+              <property name="minimumSize">
+               <size>
+                <width>636</width>
+                <height>39</height>
+               </size>
+              </property>
+              <property name="maximumSize">
+               <size>
+                <width>16777215</width>
+                <height>39</height>
+               </size>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">QWidget#widget_back {
 	/*border-top-width: 1px;
 	border-right-width: 2px;
 	border-bottom-width: 1px;
 	border-left-width: 2px;
 	border-image: url(:/Main/Resources/Main/back.png) 0 40 0 20 stretch stretch;;*/
 }</string>
-            </property>
-            <layout class="QHBoxLayout" name="horizontalLayout_5">
-             <property name="spacing">
-              <number>0</number>
-             </property>
-             <property name="leftMargin">
-              <number>0</number>
-             </property>
-             <property name="topMargin">
-              <number>0</number>
-             </property>
-             <property name="rightMargin">
-              <number>0</number>
-             </property>
-             <property name="bottomMargin">
-              <number>0</number>
-             </property>
-             <item>
-              <spacer name="horizontalSpacer">
-               <property name="orientation">
-                <enum>Qt::Horizontal</enum>
+              </property>
+              <layout class="QHBoxLayout" name="horizontalLayout_7">
+               <property name="spacing">
+                <number>15</number>
                </property>
-               <property name="sizeHint" stdset="0">
-                <size>
-                 <width>124</width>
-                 <height>20</height>
-                </size>
+               <property name="leftMargin">
+                <number>40</number>
                </property>
-              </spacer>
-             </item>
-             <item>
-              <widget class="QLineEdit" name="lineEdit_search">
-               <property name="minimumSize">
-                <size>
-                 <width>217</width>
-                 <height>29</height>
-                </size>
+               <property name="topMargin">
+                <number>0</number>
                </property>
-               <property name="maximumSize">
-                <size>
-                 <width>16777215</width>
-                 <height>29</height>
-                </size>
+               <property name="rightMargin">
+                <number>0</number>
                </property>
-               <property name="styleSheet">
-                <string notr="true">QLineEdit {
+               <property name="bottomMargin">
+                <number>0</number>
+               </property>
+               <item>
+                <widget class="QStackedWidget" name="stackedWidget_login">
+                 <property name="minimumSize">
+                  <size>
+                   <width>110</width>
+                   <height>39</height>
+                  </size>
+                 </property>
+                 <property name="maximumSize">
+                  <size>
+                   <width>140</width>
+                   <height>39</height>
+                  </size>
+                 </property>
+                 <property name="currentIndex">
+                  <number>0</number>
+                 </property>
+                 <widget class="QWidget" name="page">
+                  <layout class="QHBoxLayout" name="horizontalLayout_5">
+                   <property name="spacing">
+                    <number>2</number>
+                   </property>
+                   <property name="leftMargin">
+                    <number>0</number>
+                   </property>
+                   <property name="topMargin">
+                    <number>0</number>
+                   </property>
+                   <property name="rightMargin">
+                    <number>0</number>
+                   </property>
+                   <property name="bottomMargin">
+                    <number>0</number>
+                   </property>
+                   <item>
+                    <widget class="QPushButton" name="btn_login">
+                     <property name="minimumSize">
+                      <size>
+                       <width>30</width>
+                       <height>12</height>
+                      </size>
+                     </property>
+                     <property name="maximumSize">
+                      <size>
+                       <width>30</width>
+                       <height>12</height>
+                      </size>
+                     </property>
+                     <property name="focusPolicy">
+                      <enum>Qt::NoFocus</enum>
+                     </property>
+                     <property name="styleSheet">
+                      <string notr="true">QPushButton {
+	border:none;
+	color: rgb(255, 255, 255);
+}
+</string>
+                     </property>
+                     <property name="text">
+                      <string>登录</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="QLabel" name="label">
+                     <property name="minimumSize">
+                      <size>
+                       <width>8</width>
+                       <height>12</height>
+                      </size>
+                     </property>
+                     <property name="maximumSize">
+                      <size>
+                       <width>8</width>
+                       <height>12</height>
+                      </size>
+                     </property>
+                     <property name="styleSheet">
+                      <string notr="true">QLabel {
+	color: rgb(255, 255, 255);
+}</string>
+                     </property>
+                     <property name="text">
+                      <string>|</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="QPushButton" name="btn_register">
+                     <property name="minimumSize">
+                      <size>
+                       <width>30</width>
+                       <height>12</height>
+                      </size>
+                     </property>
+                     <property name="maximumSize">
+                      <size>
+                       <width>30</width>
+                       <height>12</height>
+                      </size>
+                     </property>
+                     <property name="focusPolicy">
+                      <enum>Qt::NoFocus</enum>
+                     </property>
+                     <property name="styleSheet">
+                      <string notr="true">QPushButton {
+	border:none;
+	color: rgb(255, 255, 255);
+}
+</string>
+                     </property>
+                     <property name="text">
+                      <string>注册</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="QPushButton" name="btn_logo">
+                     <property name="minimumSize">
+                      <size>
+                       <width>29</width>
+                       <height>29</height>
+                      </size>
+                     </property>
+                     <property name="maximumSize">
+                      <size>
+                       <width>29</width>
+                       <height>29</height>
+                      </size>
+                     </property>
+                     <property name="focusPolicy">
+                      <enum>Qt::NoFocus</enum>
+                     </property>
+                     <property name="styleSheet">
+                      <string notr="true">QPushButton {
+	border:none;
+	border-image: url(:/Main/Resources/Main/title_logo.png);
+}
+</string>
+                     </property>
+                     <property name="text">
+                      <string/>
+                     </property>
+                    </widget>
+                   </item>
+                  </layout>
+                 </widget>
+                </widget>
+               </item>
+               <item>
+                <widget class="QLineEdit" name="lineEdit_search">
+                 <property name="minimumSize">
+                  <size>
+                   <width>217</width>
+                   <height>29</height>
+                  </size>
+                 </property>
+                 <property name="maximumSize">
+                  <size>
+                   <width>16777215</width>
+                   <height>29</height>
+                  </size>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">QLineEdit {
 	border-top-width: 1px;
 	border-right-width: 1px;
 	border-bottom-width: 1px;
@@ -927,72 +1072,75 @@ QPushButton:checked:pressed {
 QLineEdit:focus {
 	border-image: url(:/Main/Resources/Main/lineEdit_search_focus.png) 0 10 0 10 stretch stretch;
 }</string>
-               </property>
-              </widget>
-             </item>
-             <item>
-              <spacer name="horizontalSpacer_2">
-               <property name="orientation">
-                <enum>Qt::Horizontal</enum>
-               </property>
-               <property name="sizeHint" stdset="0">
-                <size>
-                 <width>124</width>
-                 <height>20</height>
-                </size>
-               </property>
-              </spacer>
-             </item>
-             <item>
-              <widget class="QWidget" name="widget_back_button" native="true">
-               <property name="minimumSize">
-                <size>
-                 <width>165</width>
-                 <height>39</height>
-                </size>
-               </property>
-               <property name="maximumSize">
-                <size>
-                 <width>165</width>
-                 <height>39</height>
-                </size>
-               </property>
-               <property name="styleSheet">
-                <string notr="true">QWidget#widget_back_button {
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QWidget" name="widget" native="true">
+                 <property name="minimumSize">
+                  <size>
+                   <width>55</width>
+                   <height>39</height>
+                  </size>
+                 </property>
+                 <property name="maximumSize">
+                  <size>
+                   <width>55</width>
+                   <height>39</height>
+                  </size>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QWidget" name="widget_back_button" native="true">
+                 <property name="minimumSize">
+                  <size>
+                   <width>165</width>
+                   <height>39</height>
+                  </size>
+                 </property>
+                 <property name="maximumSize">
+                  <size>
+                   <width>165</width>
+                   <height>39</height>
+                  </size>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">QWidget#widget_back_button {
 }</string>
-               </property>
-               <widget class="QPushButton" name="btn_right_skin">
-                <property name="geometry">
-                 <rect>
-                  <x>0</x>
-                  <y>10</y>
-                  <width>23</width>
-                  <height>18</height>
-                 </rect>
-                </property>
-                <property name="minimumSize">
-                 <size>
-                  <width>23</width>
-                  <height>18</height>
-                 </size>
-                </property>
-                <property name="maximumSize">
-                 <size>
-                  <width>23</width>
-                  <height>18</height>
-                 </size>
-                </property>
-                <property name="cursor">
-                 <cursorShape>PointingHandCursor</cursorShape>
-                </property>
-                <property name="focusPolicy">
-                 <enum>Qt::NoFocus</enum>
-                </property>
-                <property name="toolTip">
-                 <string>更换皮肤</string>
-                </property>
-                <property name="styleSheet">
-                 <string notr="true">QPushButton {
+                 </property>
+                 <widget class="QPushButton" name="btn_right_skin">
+                  <property name="geometry">
+                   <rect>
+                    <x>0</x>
+                    <y>10</y>
+                    <width>23</width>
+                    <height>18</height>
+                   </rect>
+                  </property>
+                  <property name="minimumSize">
+                   <size>
+                    <width>23</width>
+                    <height>18</height>
+                   </size>
+                  </property>
+                  <property name="maximumSize">
+                   <size>
+                    <width>23</width>
+                    <height>18</height>
+                   </size>
+                  </property>
+                  <property name="cursor">
+                   <cursorShape>PointingHandCursor</cursorShape>
+                  </property>
+                  <property name="focusPolicy">
+                   <enum>Qt::NoFocus</enum>
+                  </property>
+                  <property name="toolTip">
+                   <string>更换皮肤</string>
+                  </property>
+                  <property name="styleSheet">
+                   <string notr="true">QPushButton {
 	border:none;
 	background-image: url(:/Main/Resources/Main/btn_skin_normal.png);
 }
@@ -1002,69 +1150,69 @@ QPushButton:hover {
 QPushButton:pressed {
 	background-image: url(:/Main/Resources/Main/btn_skin_clicked.png);
 }</string>
-                </property>
-               </widget>
-               <widget class="QLabel" name="label_separate">
-                <property name="geometry">
-                 <rect>
-                  <x>24</x>
-                  <y>10</y>
-                  <width>18</width>
-                  <height>18</height>
-                 </rect>
-                </property>
-                <property name="minimumSize">
-                 <size>
-                  <width>18</width>
-                  <height>18</height>
-                 </size>
-                </property>
-                <property name="maximumSize">
-                 <size>
-                  <width>18</width>
-                  <height>18</height>
-                 </size>
-                </property>
-                <property name="styleSheet">
-                 <string notr="true">QLabel {
+                  </property>
+                 </widget>
+                 <widget class="QLabel" name="label_separate">
+                  <property name="geometry">
+                   <rect>
+                    <x>24</x>
+                    <y>10</y>
+                    <width>18</width>
+                    <height>18</height>
+                   </rect>
+                  </property>
+                  <property name="minimumSize">
+                   <size>
+                    <width>18</width>
+                    <height>18</height>
+                   </size>
+                  </property>
+                  <property name="maximumSize">
+                   <size>
+                    <width>18</width>
+                    <height>18</height>
+                   </size>
+                  </property>
+                  <property name="styleSheet">
+                   <string notr="true">QLabel {
 	background-position: center top;
 	background-repeat: no-repeat;
 	background-image: url(:/Main/Resources/Main/separate_line.png);
 }</string>
-                </property>
-               </widget>
-               <widget class="QPushButton" name="btn_right_menu">
-                <property name="geometry">
-                 <rect>
-                  <x>43</x>
-                  <y>10</y>
-                  <width>23</width>
-                  <height>18</height>
-                 </rect>
-                </property>
-                <property name="minimumSize">
-                 <size>
-                  <width>23</width>
-                  <height>18</height>
-                 </size>
-                </property>
-                <property name="maximumSize">
-                 <size>
-                  <width>23</width>
-                  <height>18</height>
-                 </size>
-                </property>
-                <property name="cursor">
-                 <cursorShape>PointingHandCursor</cursorShape>
-                </property>
-                <property name="focusPolicy">
-                 <enum>Qt::NoFocus</enum>
-                </property>
-                <property name="toolTip">
-                 <string>主菜单</string>
-                </property>
-                <property name="styleSheet">
-                 <string notr="true">QPushButton {
+                  </property>
+                 </widget>
+                 <widget class="QPushButton" name="btn_right_menu">
+                  <property name="geometry">
+                   <rect>
+                    <x>43</x>
+                    <y>10</y>
+                    <width>23</width>
+                    <height>18</height>
+                   </rect>
+                  </property>
+                  <property name="minimumSize">
+                   <size>
+                    <width>23</width>
+                    <height>18</height>
+                   </size>
+                  </property>
+                  <property name="maximumSize">
+                   <size>
+                    <width>23</width>
+                    <height>18</height>
+                   </size>
+                  </property>
+                  <property name="cursor">
+                   <cursorShape>PointingHandCursor</cursorShape>
+                  </property>
+                  <property name="focusPolicy">
+                   <enum>Qt::NoFocus</enum>
+                  </property>
+                  <property name="toolTip">
+                   <string>主菜单</string>
+                  </property>
+                  <property name="styleSheet">
+                   <string notr="true">QPushButton {
 	border:none;
 	background-image: url(:/Main/Resources/Main/btn_menu_normal.png);
 }
@@ -1074,40 +1222,40 @@ QPushButton:hover {
 QPushButton:pressed {
 	background-image: url(:/Main/Resources/Main/btn_menu_clicked.png);
 }</string>
-                </property>
-               </widget>
-               <widget class="QPushButton" name="btn_right_remote">
-                <property name="geometry">
-                 <rect>
-                  <x>67</x>
-                  <y>10</y>
-                  <width>23</width>
-                  <height>18</height>
-                 </rect>
-                </property>
-                <property name="minimumSize">
-                 <size>
-                  <width>23</width>
-                  <height>18</height>
-                 </size>
-                </property>
-                <property name="maximumSize">
-                 <size>
-                  <width>23</width>
-                  <height>18</height>
-                 </size>
-                </property>
-                <property name="cursor">
-                 <cursorShape>PointingHandCursor</cursorShape>
-                </property>
-                <property name="focusPolicy">
-                 <enum>Qt::NoFocus</enum>
-                </property>
-                <property name="toolTip">
-                 <string>开启遥控器</string>
-                </property>
-                <property name="styleSheet">
-                 <string notr="true">QPushButton {
+                  </property>
+                 </widget>
+                 <widget class="QPushButton" name="btn_right_remote">
+                  <property name="geometry">
+                   <rect>
+                    <x>67</x>
+                    <y>10</y>
+                    <width>23</width>
+                    <height>18</height>
+                   </rect>
+                  </property>
+                  <property name="minimumSize">
+                   <size>
+                    <width>23</width>
+                    <height>18</height>
+                   </size>
+                  </property>
+                  <property name="maximumSize">
+                   <size>
+                    <width>23</width>
+                    <height>18</height>
+                   </size>
+                  </property>
+                  <property name="cursor">
+                   <cursorShape>PointingHandCursor</cursorShape>
+                  </property>
+                  <property name="focusPolicy">
+                   <enum>Qt::NoFocus</enum>
+                  </property>
+                  <property name="toolTip">
+                   <string>开启遥控器</string>
+                  </property>
+                  <property name="styleSheet">
+                   <string notr="true">QPushButton {
 	border:none;
 	background-image: url(:/Main/Resources/Main/btn_remote_normal.png);
 }
@@ -1117,40 +1265,40 @@ QPushButton:hover {
 QPushButton:pressed {
 	background-image: url(:/Main/Resources/Main/btn_remote_clicked.png);
 }</string>
-                </property>
-               </widget>
-               <widget class="QPushButton" name="btn_right_hide">
-                <property name="geometry">
-                 <rect>
-                  <x>91</x>
-                  <y>10</y>
-                  <width>23</width>
-                  <height>18</height>
-                 </rect>
-                </property>
-                <property name="minimumSize">
-                 <size>
-                  <width>23</width>
-                  <height>18</height>
-                 </size>
-                </property>
-                <property name="maximumSize">
-                 <size>
-                  <width>23</width>
-                  <height>18</height>
-                 </size>
-                </property>
-                <property name="cursor">
-                 <cursorShape>PointingHandCursor</cursorShape>
-                </property>
-                <property name="focusPolicy">
-                 <enum>Qt::NoFocus</enum>
-                </property>
-                <property name="toolTip">
-                 <string>隐藏音乐库</string>
-                </property>
-                <property name="styleSheet">
-                 <string notr="true">QPushButton {
+                  </property>
+                 </widget>
+                 <widget class="QPushButton" name="btn_right_hide">
+                  <property name="geometry">
+                   <rect>
+                    <x>91</x>
+                    <y>10</y>
+                    <width>23</width>
+                    <height>18</height>
+                   </rect>
+                  </property>
+                  <property name="minimumSize">
+                   <size>
+                    <width>23</width>
+                    <height>18</height>
+                   </size>
+                  </property>
+                  <property name="maximumSize">
+                   <size>
+                    <width>23</width>
+                    <height>18</height>
+                   </size>
+                  </property>
+                  <property name="cursor">
+                   <cursorShape>PointingHandCursor</cursorShape>
+                  </property>
+                  <property name="focusPolicy">
+                   <enum>Qt::NoFocus</enum>
+                  </property>
+                  <property name="toolTip">
+                   <string>隐藏音乐库</string>
+                  </property>
+                  <property name="styleSheet">
+                   <string notr="true">QPushButton {
 	border:none;
 	background-image: url(:/Main/Resources/Main/btn_hide_normal.png);
 }
@@ -1160,40 +1308,40 @@ QPushButton:hover {
 QPushButton:pressed {
 	background-image: url(:/Main/Resources/Main/btn_hide_clicked.png);
 }</string>
-                </property>
-               </widget>
-               <widget class="QPushButton" name="btn_right_min">
-                <property name="geometry">
-                 <rect>
-                  <x>115</x>
-                  <y>10</y>
-                  <width>23</width>
-                  <height>18</height>
-                 </rect>
-                </property>
-                <property name="minimumSize">
-                 <size>
-                  <width>23</width>
-                  <height>18</height>
-                 </size>
-                </property>
-                <property name="maximumSize">
-                 <size>
-                  <width>23</width>
-                  <height>18</height>
-                 </size>
-                </property>
-                <property name="cursor">
-                 <cursorShape>PointingHandCursor</cursorShape>
-                </property>
-                <property name="focusPolicy">
-                 <enum>Qt::NoFocus</enum>
-                </property>
-                <property name="toolTip">
-                 <string>最小化</string>
-                </property>
-                <property name="styleSheet">
-                 <string notr="true">QPushButton {
+                  </property>
+                 </widget>
+                 <widget class="QPushButton" name="btn_right_min">
+                  <property name="geometry">
+                   <rect>
+                    <x>115</x>
+                    <y>10</y>
+                    <width>23</width>
+                    <height>18</height>
+                   </rect>
+                  </property>
+                  <property name="minimumSize">
+                   <size>
+                    <width>23</width>
+                    <height>18</height>
+                   </size>
+                  </property>
+                  <property name="maximumSize">
+                   <size>
+                    <width>23</width>
+                    <height>18</height>
+                   </size>
+                  </property>
+                  <property name="cursor">
+                   <cursorShape>PointingHandCursor</cursorShape>
+                  </property>
+                  <property name="focusPolicy">
+                   <enum>Qt::NoFocus</enum>
+                  </property>
+                  <property name="toolTip">
+                   <string>最小化</string>
+                  </property>
+                  <property name="styleSheet">
+                   <string notr="true">QPushButton {
 	border:none;
 	background-image: url(:/Main/Resources/Main/btn_min_normal.png);
 }
@@ -1203,40 +1351,40 @@ QPushButton:hover {
 QPushButton:pressed {
 	background-image: url(:/Main/Resources/Main/btn_min_clicked.png);
 }</string>
-                </property>
-               </widget>
-               <widget class="QPushButton" name="btn_right_close">
-                <property name="geometry">
-                 <rect>
-                  <x>139</x>
-                  <y>10</y>
-                  <width>23</width>
-                  <height>18</height>
-                 </rect>
-                </property>
-                <property name="minimumSize">
-                 <size>
-                  <width>23</width>
-                  <height>18</height>
-                 </size>
-                </property>
-                <property name="maximumSize">
-                 <size>
-                  <width>13</width>
-                  <height>18</height>
-                 </size>
-                </property>
-                <property name="cursor">
-                 <cursorShape>PointingHandCursor</cursorShape>
-                </property>
-                <property name="focusPolicy">
-                 <enum>Qt::NoFocus</enum>
-                </property>
-                <property name="toolTip">
-                 <string>关闭</string>
-                </property>
-                <property name="styleSheet">
-                 <string notr="true">QPushButton {
+                  </property>
+                 </widget>
+                 <widget class="QPushButton" name="btn_right_close">
+                  <property name="geometry">
+                   <rect>
+                    <x>139</x>
+                    <y>10</y>
+                    <width>23</width>
+                    <height>18</height>
+                   </rect>
+                  </property>
+                  <property name="minimumSize">
+                   <size>
+                    <width>23</width>
+                    <height>18</height>
+                   </size>
+                  </property>
+                  <property name="maximumSize">
+                   <size>
+                    <width>13</width>
+                    <height>18</height>
+                   </size>
+                  </property>
+                  <property name="cursor">
+                   <cursorShape>PointingHandCursor</cursorShape>
+                  </property>
+                  <property name="focusPolicy">
+                   <enum>Qt::NoFocus</enum>
+                  </property>
+                  <property name="toolTip">
+                   <string>关闭</string>
+                  </property>
+                  <property name="styleSheet">
+                   <string notr="true">QPushButton {
 	border:none;
 	background-image: url(:/Main/Resources/Main/btn_close_normal.png);
 }
@@ -1246,12 +1394,286 @@ QPushButton:hover {
 QPushButton:pressed {
 	background-image: url(:/Main/Resources/Main/btn_close_clicked.png);
 }</string>
-                </property>
-               </widget>
-              </widget>
-             </item>
-            </layout>
-           </widget>
+                  </property>
+                 </widget>
+                </widget>
+               </item>
+              </layout>
+             </widget>
+            </item>
+            <item>
+             <widget class="QWidget" name="widget_2" native="true">
+              <layout class="QHBoxLayout" name="horizontalLayout_10">
+               <property name="spacing">
+                <number>25</number>
+               </property>
+               <property name="leftMargin">
+                <number>35</number>
+               </property>
+               <property name="topMargin">
+                <number>16</number>
+               </property>
+               <property name="rightMargin">
+                <number>0</number>
+               </property>
+               <property name="bottomMargin">
+                <number>10</number>
+               </property>
+               <item>
+                <layout class="QHBoxLayout" name="horizontalLayout_8">
+                 <property name="spacing">
+                  <number>10</number>
+                 </property>
+                 <item>
+                  <widget class="QPushButton" name="btn_back">
+                   <property name="minimumSize">
+                    <size>
+                     <width>34</width>
+                     <height>50</height>
+                    </size>
+                   </property>
+                   <property name="maximumSize">
+                    <size>
+                     <width>34</width>
+                     <height>50</height>
+                    </size>
+                   </property>
+                   <property name="focusPolicy">
+                    <enum>Qt::NoFocus</enum>
+                   </property>
+                   <property name="styleSheet">
+                    <string notr="true">QPushButton {
+	border:none;
+	background-image: url(:/RightTab/Resources/RightTab/btn_back_normal.png);
+}
+QPushButton:hover {
+	background-image: url(:/RightTab/Resources/RightTab/btn_back_hover.png);
+}
+QPushButton:pressed {
+	background-image: url(:/RightTab/Resources/RightTab/btn_back_clicked.png);
+}
+
+QPushButton:disabled {
+	background-image: url(:/RightTab/Resources/RightTab/btn_back_disable.png);
+}
+</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QPushButton" name="btn_refresh">
+                   <property name="minimumSize">
+                    <size>
+                     <width>34</width>
+                     <height>50</height>
+                    </size>
+                   </property>
+                   <property name="maximumSize">
+                    <size>
+                     <width>34</width>
+                     <height>50</height>
+                    </size>
+                   </property>
+                   <property name="focusPolicy">
+                    <enum>Qt::NoFocus</enum>
+                   </property>
+                   <property name="styleSheet">
+                    <string notr="true">QPushButton {
+	border:none;
+	background-image: url(:/RightTab/Resources/RightTab/btn_refresh_normal.png);
+}
+QPushButton:hover {
+	background-image: url(:/RightTab/Resources/RightTab/btn_refresh_hover.png);
+}
+QPushButton:pressed {
+	background-image: url(:/RightTab/Resources/RightTab/btn_refresh_clicked.png);
+}
+
+QPushButton:disabled {
+	background-image: url(:/RightTab/Resources/RightTab/btn_refresh_disable.png);
+}
+</string>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </item>
+               <item>
+                <layout class="QHBoxLayout" name="horizontalLayout_9">
+                 <property name="spacing">
+                  <number>15</number>
+                 </property>
+                 <item>
+                  <widget class="QPushButton" name="btn_music">
+                   <property name="minimumSize">
+                    <size>
+                     <width>80</width>
+                     <height>50</height>
+                    </size>
+                   </property>
+                   <property name="maximumSize">
+                    <size>
+                     <width>80</width>
+                     <height>50</height>
+                    </size>
+                   </property>
+                   <property name="focusPolicy">
+                    <enum>Qt::NoFocus</enum>
+                   </property>
+                   <property name="styleSheet">
+                    <string notr="true">QPushButton {
+	border:none;
+	background-image: url(:/RightTab/Resources/RightTab/btn_music_normal.png);
+}
+QPushButton:hover {
+	background-image: url(:/RightTab/Resources/RightTab/btn_music_hover.png);
+}
+QPushButton:pressed {
+	background-image: url(:/RightTab/Resources/RightTab/btn_music_clicked.png);
+}
+
+</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QPushButton" name="btn_radio">
+                   <property name="minimumSize">
+                    <size>
+                     <width>80</width>
+                     <height>50</height>
+                    </size>
+                   </property>
+                   <property name="maximumSize">
+                    <size>
+                     <width>80</width>
+                     <height>50</height>
+                    </size>
+                   </property>
+                   <property name="focusPolicy">
+                    <enum>Qt::NoFocus</enum>
+                   </property>
+                   <property name="styleSheet">
+                    <string notr="true">QPushButton {
+	border:none;
+	background-image: url(:/RightTab/Resources/RightTab/btn_radio_normal.png);
+}
+QPushButton:hover {
+	background-image: url(:/RightTab/Resources/RightTab/btn_radio_hover.png);
+}
+QPushButton:pressed {
+	background-image: url(:/RightTab/Resources/RightTab/btn_radio_clicked.png);
+}
+
+</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QPushButton" name="btn_mv">
+                   <property name="minimumSize">
+                    <size>
+                     <width>80</width>
+                     <height>50</height>
+                    </size>
+                   </property>
+                   <property name="maximumSize">
+                    <size>
+                     <width>80</width>
+                     <height>50</height>
+                    </size>
+                   </property>
+                   <property name="focusPolicy">
+                    <enum>Qt::NoFocus</enum>
+                   </property>
+                   <property name="styleSheet">
+                    <string notr="true">QPushButton {
+	border:none;
+	background-image: url(:/RightTab/Resources/RightTab/btn_mv_normal.png);
+}
+QPushButton:hover {
+	background-image: url(:/RightTab/Resources/RightTab/btn_mv_hover.png);
+}
+QPushButton:pressed {
+	background-image: url(:/RightTab/Resources/RightTab/btn_mv_clicked.png);
+}
+
+</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QPushButton" name="btn_live">
+                   <property name="minimumSize">
+                    <size>
+                     <width>80</width>
+                     <height>50</height>
+                    </size>
+                   </property>
+                   <property name="maximumSize">
+                    <size>
+                     <width>80</width>
+                     <height>50</height>
+                    </size>
+                   </property>
+                   <property name="focusPolicy">
+                    <enum>Qt::NoFocus</enum>
+                   </property>
+                   <property name="styleSheet">
+                    <string notr="true">QPushButton {
+	border:none;
+	background-image: url(:/RightTab/Resources/RightTab/btn_live_normal.png);
+}
+QPushButton:hover {
+	background-image: url(:/RightTab/Resources/RightTab/btn_live_hover.png);
+}
+QPushButton:pressed {
+	background-image: url(:/RightTab/Resources/RightTab/btn_live_clicked.png);
+}
+
+</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QPushButton" name="btn_lrc">
+                   <property name="minimumSize">
+                    <size>
+                     <width>80</width>
+                     <height>50</height>
+                    </size>
+                   </property>
+                   <property name="maximumSize">
+                    <size>
+                     <width>80</width>
+                     <height>50</height>
+                    </size>
+                   </property>
+                   <property name="focusPolicy">
+                    <enum>Qt::NoFocus</enum>
+                   </property>
+                   <property name="styleSheet">
+                    <string notr="true">QPushButton {
+	border:none;
+	background-image: url(:/RightTab/Resources/RightTab/btn_lrc_normal.png);
+}
+QPushButton:hover {
+	background-image: url(:/RightTab/Resources/RightTab/btn_lrc_hover.png);
+}
+QPushButton:pressed {
+	background-image: url(:/RightTab/Resources/RightTab/btn_lrc_clicked.png);
+}
+
+</string>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </item>
+              </layout>
+             </widget>
+            </item>
+           </layout>
           </widget>
          </item>
         </layout>
@@ -1390,12 +1812,17 @@ QListWidget#listWidget_tab::item::hover {
           </widget>
          </item>
          <item>
-          <widget class="QWidget" name="widget_center_right" native="true">
+          <widget class="QWebView" name="webView">
            <property name="minimumSize">
             <size>
              <width>636</width>
              <height>457</height>
             </size>
+           </property>
+           <property name="url">
+            <url>
+             <string>http://www.kugou.com/</string>
+            </url>
            </property>
           </widget>
          </item>
@@ -1429,6 +1856,11 @@ QListWidget#listWidget_tab::item::hover {
   </layout>
  </widget>
  <customwidgets>
+  <customwidget>
+   <class>QWebView</class>
+   <extends>QWidget</extends>
+   <header>QtWebKitWidgets/QWebView</header>
+  </customwidget>
   <customwidget>
    <class>QSliderClicked</class>
    <extends>QSlider</extends>

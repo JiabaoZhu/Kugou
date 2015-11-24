@@ -104,6 +104,7 @@
         <file>Resources/Main/btn_nicam_uncheck_normal.png</file>
         <file>Resources/Main/lineEdit_search_focus.png</file>
         <file>Resources/Main/lineEdit_search_normal.png</file>
+        <file>Resources/Main/title_logo.png</file>
     </qresource>
     <qresource prefix="/Tray">
         <file>Resources/Tray/btn_next_clicked.png</file>
@@ -168,5 +169,33 @@
     </qresource>
     <qresource prefix="/Status">
         <file>Resources/Status/back_normal.png</file>
+    </qresource>
+    <qresource prefix="/RightTab">
+        <file>Resources/RightTab/btn_back_clicked.png</file>
+        <file>Resources/RightTab/btn_back_disable.png</file>
+        <file>Resources/RightTab/btn_back_hover.png</file>
+        <file>Resources/RightTab/btn_back_normal.png</file>
+        <file>Resources/RightTab/btn_live_clicked.png</file>
+        <file>Resources/RightTab/btn_live_hover.png</file>
+        <file>Resources/RightTab/btn_live_normal.png</file>
+        <file>Resources/RightTab/btn_lrc_clicked.png</file>
+        <file>Resources/RightTab/btn_lrc_hover.png</file>
+        <file>Resources/RightTab/btn_lrc_normal.png</file>
+        <file>Resources/RightTab/btn_more_clicked.png</file>
+        <file>Resources/RightTab/btn_more_hover.png</file>
+        <file>Resources/RightTab/btn_more_normal.png</file>
+        <file>Resources/RightTab/btn_music_clicked.png</file>
+        <file>Resources/RightTab/btn_music_hover.png</file>
+        <file>Resources/RightTab/btn_music_normal.png</file>
+        <file>Resources/RightTab/btn_mv_clicked.png</file>
+        <file>Resources/RightTab/btn_mv_hover.png</file>
+        <file>Resources/RightTab/btn_mv_normal.png</file>
+        <file>Resources/RightTab/btn_radio_clicked.png</file>
+        <file>Resources/RightTab/btn_radio_hover.png</file>
+        <file>Resources/RightTab/btn_radio_normal.png</file>
+        <file>Resources/RightTab/btn_refresh_clicked.png</file>
+        <file>Resources/RightTab/btn_refresh_disable.png</file>
+        <file>Resources/RightTab/btn_refresh_hover.png</file>
+        <file>Resources/RightTab/btn_refresh_normal.png</file>
     </qresource>
 </RCC>
