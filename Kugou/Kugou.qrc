@@ -105,6 +105,10 @@
         <file>Resources/Main/lineEdit_search_focus.png</file>
         <file>Resources/Main/lineEdit_search_normal.png</file>
         <file>Resources/Main/title_logo.png</file>
+        <file>Resources/Main/btn_search_clicked.png</file>
+        <file>Resources/Main/btn_search_disabled.png</file>
+        <file>Resources/Main/btn_search_hover.png</file>
+        <file>Resources/Main/btn_search_normal.png</file>
     </qresource>
     <qresource prefix="/Tray">
         <file>Resources/Tray/btn_next_clicked.png</file>
@@ -170,32 +174,46 @@
     <qresource prefix="/Status">
         <file>Resources/Status/back_normal.png</file>
     </qresource>
+    <qresource prefix="/WebView">
+        <file>Resources/WebView/scrollBar_thumb_clicked.png</file>
+        <file>Resources/WebView/scrollBar_thumb_disable.png</file>
+        <file>Resources/WebView/scrollBar_thumb_hover.png</file>
+        <file>Resources/WebView/scrollBar_thumb_normal.png</file>
+        <file>Resources/WebView/vscroll_down_clicked.png</file>
+        <file>Resources/WebView/vscroll_down_disable.png</file>
+        <file>Resources/WebView/vscroll_down_hover.png</file>
+        <file>Resources/WebView/vscroll_down_normal.png</file>
+        <file>Resources/WebView/vscroll_up_clicked.png</file>
+        <file>Resources/WebView/vscroll_up_disable.png</file>
+        <file>Resources/WebView/vscroll_up_hover.png</file>
+        <file>Resources/WebView/vscroll_up_normal.png</file>
+    </qresource>
     <qresource prefix="/RightTab">
         <file>Resources/RightTab/btn_back_clicked.png</file>
         <file>Resources/RightTab/btn_back_disable.png</file>
         <file>Resources/RightTab/btn_back_hover.png</file>
         <file>Resources/RightTab/btn_back_normal.png</file>
-        <file>Resources/RightTab/btn_live_clicked.png</file>
-        <file>Resources/RightTab/btn_live_hover.png</file>
-        <file>Resources/RightTab/btn_live_normal.png</file>
-        <file>Resources/RightTab/btn_lrc_clicked.png</file>
-        <file>Resources/RightTab/btn_lrc_hover.png</file>
-        <file>Resources/RightTab/btn_lrc_normal.png</file>
-        <file>Resources/RightTab/btn_more_clicked.png</file>
-        <file>Resources/RightTab/btn_more_hover.png</file>
-        <file>Resources/RightTab/btn_more_normal.png</file>
-        <file>Resources/RightTab/btn_music_clicked.png</file>
-        <file>Resources/RightTab/btn_music_hover.png</file>
-        <file>Resources/RightTab/btn_music_normal.png</file>
-        <file>Resources/RightTab/btn_mv_clicked.png</file>
-        <file>Resources/RightTab/btn_mv_hover.png</file>
-        <file>Resources/RightTab/btn_mv_normal.png</file>
-        <file>Resources/RightTab/btn_radio_clicked.png</file>
-        <file>Resources/RightTab/btn_radio_hover.png</file>
-        <file>Resources/RightTab/btn_radio_normal.png</file>
         <file>Resources/RightTab/btn_refresh_clicked.png</file>
         <file>Resources/RightTab/btn_refresh_disable.png</file>
         <file>Resources/RightTab/btn_refresh_hover.png</file>
         <file>Resources/RightTab/btn_refresh_normal.png</file>
+        <file>Resources/RightTab/radiobtn_live_checked.png</file>
+        <file>Resources/RightTab/radiobtn_live_hover.png</file>
+        <file>Resources/RightTab/radiobtn_live_normal.png</file>
+        <file>Resources/RightTab/radiobtn_lrc_checked.png</file>
+        <file>Resources/RightTab/radiobtn_lrc_hover.png</file>
+        <file>Resources/RightTab/radiobtn_lrc_normal.png</file>
+        <file>Resources/RightTab/radiobtn_more_checked.png</file>
+        <file>Resources/RightTab/radiobtn_more_hover.png</file>
+        <file>Resources/RightTab/radiobtn_more_normal.png</file>
+        <file>Resources/RightTab/radiobtn_music_checked.png</file>
+        <file>Resources/RightTab/radiobtn_music_hover.png</file>
+        <file>Resources/RightTab/radiobtn_music_normal.png</file>
+        <file>Resources/RightTab/radiobtn_mv_checked.png</file>
+        <file>Resources/RightTab/radiobtn_mv_hover.png</file>
+        <file>Resources/RightTab/radiobtn_mv_normal.png</file>
+        <file>Resources/RightTab/radiobtn_radio_checked.png</file>
+        <file>Resources/RightTab/radiobtn_radio_hover.png</file>
+        <file>Resources/RightTab/radiobtn_radio_normal.png</file>
     </qresource>
 </RCC>

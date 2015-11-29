@@ -1,14 +1,6 @@
 ﻿#ifndef KUGOU_H
 #define KUGOU_H
 
-#include <QDialog>
-#include <QMouseEvent>
-#include <QResizeEvent>
-#include <QImage>
-#include <QListWidget>
-#include <QSystemTrayIcon>
-#include <QRadioButton>
-
 namespace Ui {
 class Kugou;
 }
@@ -61,6 +53,10 @@ protected:
 private slots:
     void trayiconActivated(QSystemTrayIcon::ActivationReason);
 
+    void on_webView_loadFinished(bool);
+
+    void on_btn_search_clicked();
+
     void on_btn_left_show_clicked();
     void on_btn_left_min_clicked();
     void on_btn_left_close_clicked();
@@ -69,8 +65,20 @@ private slots:
     void on_btn_right_min_clicked();
     void on_btn_right_close_clicked();
 
+    void on_radiobtn_mv_toggled(bool);
+
+    // 乐库
+    void on_radiobtn_recommend_toggled(bool);
+    void on_radiobtn_rankingList_toggled(bool);
+    void on_radiobtn_singer_toggled(bool);
+    void on_radiobtn_classification_toggled(bool);
+    void on_radiobtn_show_toggled(bool);
+
 private:
-    void initChangeSize();
+    void setBackgroundImage(QString);
+    void initLeftTabList();
+    void initSystemTray();
+
     void showMinimized();
     void showNormal();
     void showFullScreen();
@@ -80,7 +88,6 @@ private:
     QObjectList foreachWidget(QObject *);
 
     QRadioButton* addRadioButton(QString styleSheet);
-    void initLeftTabList();
 
     // 大小改变的鼠标
     void sizeCursor(int);

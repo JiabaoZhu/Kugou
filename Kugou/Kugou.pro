@@ -16,12 +16,25 @@ TRANSLATIONS += InternationalLanguage.ts
 QTPLUGIN += qjpeg
 
 
+#预编译
+CONFIG += precompile_header
+PRECOMPILED_HEADER = stable.h
+
+#启用并行编译
+QMAKE_CXXFLAGS += /MP
+
+#生成VC工程文件
+#命令 qmake -tp vc
+
 SOURCES += main.cpp\
         Kugou.cpp \
-    QSliderClicked.cpp
+    QSliderClicked.cpp \
+    KugouUrl.cpp
 
 HEADERS  += Kugou.h \
-    QSliderClicked.h
+    QSliderClicked.h \
+    KugouUrl.h \
+    stable.h
 
 RESOURCES += \
     Kugou.qrc

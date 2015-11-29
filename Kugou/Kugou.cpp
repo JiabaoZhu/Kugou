@@ -9,9 +9,11 @@
 #include <QBitmap>
 #include <QDesktopWidget>
 #include <QtGlobal>
+#include <QWebFrame>
 
 #include "Kugou.h"
 #include "ui_Kugou.h"
+#include "KugouUrl.h"
 
 // #ifdef Q_OS_MAC
 // #ifdef Q_OS_LINUX
@@ -28,31 +30,65 @@
 // #define DebugText(format, ...)  ;
 #endif
 
+void Kugou::setBackgroundImage(QString imageName)
+{
+    m_imageName = imageName;
+    m_image.load(m_imageName);
+    if (m_image.isNull())
+    {
+        m_imageName = ":/Background/Resources/Background/1.jpg";
+        m_image.load(m_imageName);
+    }
+    m_imageWidth = m_image.width();
+    m_imageHeight = m_image.height();
+}
+
+void Kugou::initSystemTray()
+{
+    // 判断是否支持系统托盘
+    if (QSystemTrayIcon::isSystemTrayAvailable())
+    {
+        QSystemTrayIcon *trayIcon;
+        trayIcon = new QSystemTrayIcon(this);
+        trayIcon->setToolTip(tr("Kugou Music"));
+        trayIcon->setIcon(QIcon(":/Tray/Resources/Tray/tray.png"));
+        // trayIcon->setToolTip(tr("Hello"));
+        trayIcon->show();
+        // trayIcon->showMessage(QString("jiabao"),QString::fromLocal8Bit("我热恋的故乡"),QSystemTrayIcon::Information,5000);
+
+        connect(trayIcon, SIGNAL(activated(QSystemTrayIcon::ActivationReason)), this, SLOT(trayiconActivated(QSystemTrayIcon::ActivationReason)));
+
+        //创建监听行为
+        QAction *restoreAction = new QAction(QString::fromLocal8Bit("打开主面板"), this);
+        QAction *quitAction = new QAction(QString::fromLocal8Bit("退出"), this);
+        // connect(restoreAction, SIGNAL(triggered()), this, SLOT(showNormal()));
+        // connect(quitAction, SIGNAL(triggered()), qApp, SLOT(quit()));
+
+        //创建右键弹出菜单
+        QMenu *trayIconMenu = new QMenu(this);
+        trayIconMenu->addAction(restoreAction);
+        trayIconMenu->addSeparator();
+        trayIconMenu->addAction(quitAction);
+        trayIcon->setContextMenu(trayIconMenu);
+    }
+}
+
 Kugou::Kugou(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::Kugou)
 {
     ui->setupUi(this);
+    m_isFullScreen = false;
+    m_mousePress = false;
+    m_direction = Direction_No;
 
     QDir dir;
     DebugText("current path: %s", dir.currentPath().toStdString().c_str());
 
-
-    initChangeSize();
-
     initLeftTabList();
 
-    {
-        m_imageName = ":/Background/Resources/Background/3.jpg";
-        m_image.load(m_imageName);
-        if (m_image.isNull())
-        {
-            m_imageName = ":/Background/Resources/Background/1.jpg";
-            m_image.load(m_imageName);
-        }
-        m_imageWidth = m_image.width();
-        m_imageHeight = m_image.height();
-    }
+    // 初始化背景图片
+    setBackgroundImage(":/Background/Resources/Background/2.jpg");
 
     {
         setWindowFlags(Qt::FramelessWindowHint);
@@ -84,36 +120,10 @@ Kugou::Kugou(QWidget *parent) :
     }
 
     // 托盘
-    {
-        // 判断是否支持系统托盘
-        if (QSystemTrayIcon::isSystemTrayAvailable())
-        {
-            QSystemTrayIcon *trayIcon;
-            trayIcon = new QSystemTrayIcon(this);
-            trayIcon->setToolTip(tr("Kugou Music"));
-            trayIcon->setIcon(QIcon(":/Tray/Resources/Tray/tray.png"));
-            // trayIcon->setToolTip(tr("Hello"));
-            trayIcon->show();
-            // trayIcon->showMessage(QString("jiabao"),QString::fromLocal8Bit("我热恋的故乡"),QSystemTrayIcon::Information,5000);
-
-            connect(trayIcon, SIGNAL(activated(QSystemTrayIcon::ActivationReason)), this, SLOT(trayiconActivated(QSystemTrayIcon::ActivationReason)));
-
-            //创建监听行为
-            QAction *restoreAction = new QAction(QString::fromLocal8Bit("打开主面板"), this);
-            QAction *quitAction = new QAction(QString::fromLocal8Bit("退出"), this);
-            // connect(restoreAction, SIGNAL(triggered()), this, SLOT(showNormal()));
-            // connect(quitAction, SIGNAL(triggered()), qApp, SLOT(quit()));
-
-            //创建右键弹出菜单
-            QMenu *trayIconMenu = new QMenu(this);
-            trayIconMenu->addAction(restoreAction);
-            trayIconMenu->addSeparator();
-            trayIconMenu->addAction(quitAction);
-            trayIcon->setContextMenu(trayIconMenu);
-        }
-    }
+    initSystemTray();
 
     ui->slider_time->setValue(0);
+    (ui->webView->page()->mainFrame())->setScrollBarPolicy(Qt::Horizontal, Qt::ScrollBarAlwaysOff);
 
     {
         QSize desktopSize = QApplication::desktop()->size();
@@ -141,6 +151,11 @@ void Kugou::trayiconActivated(QSystemTrayIcon::ActivationReason reason)
     default:
         break;
     }
+}
+
+void Kugou::on_webView_loadFinished(bool)
+{
+    // ui->webView->page()->mainFrame()->setScrollBarValue(Qt::Vertical, 100);
 }
 
 bool Kugou::eventFilter(QObject *object, QEvent *event)
@@ -196,7 +211,7 @@ void Kugou::mousePressEvent(QMouseEvent *event)
     if(event->button() == Qt::LeftButton)
     {
         m_mousePress = true;
-        m_direction = sizeDirection(event->pos().x(), event->pos().y());
+        m_direction = sizeDirection(event->globalPos().x(), event->globalPos().y());
         m_oldMousePos = event->globalPos();
 
         // 是否全屏
@@ -219,7 +234,7 @@ void Kugou::mouseMoveEvent(QMouseEvent *event)
     // 当全屏时不能使用拉伸箭头
     else if (!m_isFullScreen)
     {
-        m_direction = sizeDirection(event->pos().x(), event->pos().y());
+        m_direction = sizeDirection(event->globalPos().x(), event->globalPos().y());
         sizeCursor(m_direction);
     }
 }
@@ -256,25 +271,26 @@ void Kugou::sizeCursor(int direction)
 
 int Kugou::sizeDirection(int x, int y)
 {
-    int width = this->width();
-    int height = this->height();
+    QRect rect = geometry();
+    int left = rect.left(), right = rect.right();
+    int top = rect.top(), bottom = rect.bottom();
 
     int direction = Direction_No;
 
-    if (x <= DISTANCE)
+    if (x <= left + DISTANCE)
     {
         direction += Direction_Left;
     }
-    else if (width-DISTANCE <= x)
+    else if (right-DISTANCE <= x)
     {
         direction += Direction_Right;
     }
 
-    if (y <= DISTANCE)
+    if (y <= top + DISTANCE)
     {
         direction += Direction_Top;
     }
-    else if (height-DISTANCE <= y)
+    else if (bottom-DISTANCE <= y)
     {
         direction += Direction_Bottom;
     }
@@ -299,12 +315,9 @@ QObjectList Kugou::foreachWidget(QObject *object)
     return result;
 }
 
-QRadioButton* Kugou::addRadioButton(QString styleSheet)
+void Kugou::on_btn_search_clicked()
 {
-    QRadioButton *btn = new QRadioButton(this);
-    btn->setStyleSheet(styleSheet);
-    btn->setFocusPolicy(Qt::NoFocus);
-    return btn;
+
 }
 
 void Kugou::on_btn_left_show_clicked()
@@ -335,11 +348,31 @@ void Kugou::on_btn_right_close_clicked()
     close();
 }
 
-void Kugou::initChangeSize()
+void Kugou::on_radiobtn_mv_toggled(bool )
 {
-    m_isFullScreen = false;
-    m_mousePress = false;
-    m_direction = Direction_No;
+    ui->webView->setUrl(QUrl("http://www2.kugou.kugou.com/mv/v9/html/index.html?ver=8010"));
+}
+
+void Kugou::on_radiobtn_recommend_toggled(bool)
+{
+    ui->webView->setUrl(QUrl(KugouUrl::getRecommendUrl()));
+}
+
+void Kugou::on_radiobtn_rankingList_toggled(bool)
+{
+    ui->webView->setUrl(QUrl(KugouUrl::getRankUrl()));
+}
+void Kugou::on_radiobtn_singer_toggled(bool)
+{
+    ui->webView->setUrl(QUrl(KugouUrl::getSingerUrl()));
+}
+void Kugou::on_radiobtn_classification_toggled(bool)
+{
+    ui->webView->setUrl(QUrl(KugouUrl::getCategoryUrl()));
+}
+void Kugou::on_radiobtn_show_toggled(bool)
+{
+    ui->webView->setUrl(QUrl(KugouUrl::getShowUrl()));
 }
 
 void Kugou::showMinimized()
@@ -352,7 +385,7 @@ void Kugou::showNormal()
     if (m_isFullScreen)
     {
         m_isFullScreen = false;
-        setFixedSize(m_oldDlgRect.width(), m_oldDlgRect.height());
+        setFixedSize(m_oldDlgRect.size());
         setGeometry(m_oldDlgRect);
     }
 }
@@ -481,3 +514,13 @@ void Kugou::initLeftTabList()
         }
     }
 }
+
+QRadioButton* Kugou::addRadioButton(QString styleSheet)
+{
+    QRadioButton *btn = new QRadioButton(this);
+    btn->setStyleSheet(styleSheet);
+    btn->setFocusPolicy(Qt::NoFocus);
+    btn->setCursor(QCursor(Qt::PointingHandCursor));
+    return btn;
+}
+

@@ -1,7 +1,6 @@
 ﻿#ifndef QSLIDERCLICKED_H
 #define QSLIDERCLICKED_H
 
-#include <QSlider>
 #include <QMouseEvent>
 
 class QSliderClicked : public QSlider
